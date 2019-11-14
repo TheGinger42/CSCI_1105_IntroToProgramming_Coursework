@@ -1,8 +1,9 @@
 /* 
 Author: Troy Aiken
 Date: 11/14/2019
-class: Introduction to Programming*/
-
+class: Introduction to Programming
+Calculate the cost of driving
+*/
 
 import java.util.Scanner;
 
