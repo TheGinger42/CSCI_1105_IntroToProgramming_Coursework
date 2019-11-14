@@ -5,9 +5,6 @@ Class: Introduction to Programing
 Financial application: compound value*/
 
 import java.util.Scanner;
-import javax.xml.xpath.*;
-import java.time.temporal.*;
-import javax.print.attribute.standard.*;
 
 public class Exercise2_13 {
 		public static void main(String[] args) {
