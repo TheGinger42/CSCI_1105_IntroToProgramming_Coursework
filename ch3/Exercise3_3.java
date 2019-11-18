@@ -20,7 +20,7 @@ public class Exercise3_3 {
 	
 	double h = ((a * d) - (b * c));
 	
-	if (h == 0); {
+	if (h == 0) {
 		System.out.println("Cannot divide by 0");
 	}
 		else { 
