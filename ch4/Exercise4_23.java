@@ -25,15 +25,15 @@ public class Exercise4_23 {
 		double fedTax = gross * ftax;
 		double stateTax = gross * stax;
 		double net = gross - (fedTax + stateTax); 
+		double deduction = stateTax + fedTax;
 		
 		System.out.println("Employee Name: " + emp);
 		System.out.println("Hours Worked: " + hours);
 		System.out.println("Pay Rate: " + rate);
-		System.out.println("Gross Pay: " + gross);
+		System.out.printf("Gross Pay %.2f\n", gross);
 		System.out.println("Deductions:");
-		System.out.printf("	Federal Withholding: (" + ftax * 100 + "%%): %.2f \n", fedTax);
-		System.out.printf("	State Withholding (" + stax * 100 + "%%): %.2f\n", stateTax);
-		System.out.printf("	Total Deduction: %.2f\n", (stateTax + fedTax));
+		System.out.printf("	Federal Withholding: %.2f%%\n", fedTax);
+		System.out.printf("	State Withholding: %.2f%%\n", stateTax);
+		System.out.printf("	Total Deduction: %.2f\n", deduction);
 		System.out.printf("Net Pay: %.2f", net);
-	}
 }
