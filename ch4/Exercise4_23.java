@@ -17,9 +17,9 @@ public class Exercise4_23 {
 		double hours = input.nextDouble();
 		System.out.print("Enter hourly pay rate: ");
 		double rate = input.nextDouble();
-		System.out.print("Enter federal tax withoulding rate: ");
+		System.out.print("Enter federal tax withholding rate: ");
 		double ftax = input.nextDouble();
-		System.out.print("Enter State tax withoulding rate: ");
+		System.out.print("Enter State tax withholding rate: ");
 		double stax = input.nextDouble();
 		double gross = hours * rate;
 		double fedTax = gross * ftax;
