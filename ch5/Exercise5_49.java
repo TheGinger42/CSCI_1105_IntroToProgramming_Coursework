@@ -9,11 +9,21 @@ import java.util.Scanner;
 public class Exercise5_49 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
-		final String vowel = a, e, i, o, u; //define vowels
-		
+		char temp;
 		System.out.print("write a sentence: "); //user input
-		String words = input.next();
-		
+		String string = input.nextLine();
+		int count = 0;
+		for (int i = 0; i == string.length(); i++){
+			temp = string.charAt(i);
+		}
+		if (temp.isLetter){
+			count++;
+		}
+		if (temp != " "){
+			
+			
+		}
+			System.out.println(count);
+				
 	}
 }
