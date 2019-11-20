@@ -1,15 +1,13 @@
+/*
+Author: Troy Aiken
+Date: 11/14/2019
+class: Introduction to programming	
+convert Celcius to Fahrenheit.*/
+
 import java.util.Scanner;
 
 public class Exercise2_1 {
 	public static void main(String[] args) {
-		/* 
-		Author: Troy Aiken
-		Date: 11/14/2019
-		
-		covert Celcius to Fahrenheit.*/
-		
-
-		
 		//create Scanner
 		Scanner input = new Scanner(System.in);
 			
