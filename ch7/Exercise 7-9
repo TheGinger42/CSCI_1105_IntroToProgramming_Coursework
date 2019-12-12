@@ -5,7 +5,6 @@ Date: 12/12/19
 Use an Array to find the smallest element.
 */
 import java.util.Scanner;
-import java.util.*;
 
 class Exercise07_9 {
 	public static void main(String[] args) {
