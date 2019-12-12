@@ -1,0 +1,40 @@
+/*
+Author: Troy Aiken
+Class: Introduction to Programming
+Date: 12/12/19
+*/
+
+import java.util.Scanner;
+class Exercise07_15 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Please enter 10 numbers separated by a space. ");
+		
+		int[] list = new int[10];
+		for (int i = 0; i < 10; i++){
+			list[i] = input.nextInt();
+		}
+		
+		
+		System.out.print("Array without duplicates: " + eliminateDuplicates(list));
+	}
+	public static int[] eliminateDuplicates(int[] list) {
+		
+		int count = 0;
+		int[] newlist = new int[list.length];
+
+		for (int i = 0; i < list.length; i++) {
+			int x = list[i];
+						
+			for (int j = i + 1; j < newlist.length; j++) {
+				if (list[i] == newlist[i]) {
+					newlist[i] = list[i];
+				}
+			}
+			count++;
+		}
+		System.out.println("The number of distinct numbers is " + count);
+		return newlist;	
+	}
+}
