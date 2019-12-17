@@ -13,19 +13,17 @@ class Exercise07_23 {
 		boolean[] lockers = new boolean[100];
 		
 		
-		for (int i = 1; i < lockers.length; i++) {
-			for (int j = i - 1; j < lockers.length; j = j + i){
-				if(lockers[j] == false) {
-					lockers[j] = true;
-				} else {
-					lockers[j] = false;
+		for (int i = 0; i < lockers.length; i++) {
+			for (int j = 0; j < lockers.length; j++){
+				if ((j + 1) % (i + 1) == 0) {
+					lockers[j] = !lockers[j];
 				}
 			}
 		}
 		//print what lockers are open
 		for (int i = 0; i < lockers.length; i++) {
 			if (lockers[i] == true){
-			System.out.println("Locker number " + (i + 1) + " is open");
+				System.out.println("Locker number " + (i + 1) + " is open");
 			}
 		}
 	}
