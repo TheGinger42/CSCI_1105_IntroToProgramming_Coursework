@@ -1,0 +1,82 @@
+/**
+Author: Troy Aiken
+Class: Intro to programming
+Date: 12/19/19
+Tic Tac Toe
+*/
+import java.util.Scanner;
+class Exercise08_9 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		boolean flag = false;
+		String[][] tic = new String[3][3];
+		for (int i = 0; i < tic.length; i++) {
+			for (int j = 0; j < tic.length; j++) {
+				tic[i][j] = " ";
+			}
+		}
+		System.out.println("Lets play Tic Tac Toe!");
+		
+		for (int i = 0; i < 3; i++){
+		System.out.println("-------------\n|   |   |   |");
+			if (i == 2){
+				System.out.println("-------------");
+			}
+		}	
+		for (int i = 0; i < 9; i++) {				
+			if (i % 2 == 0){
+				System.out.print("Enter a row (0, 1, or 2) for player X: ");				
+				int tac = input.nextInt();
+				System.out.print("Enter a Column (0, 1, or 2) for player X: ");
+				int toe = input.nextInt();
+				tic[tac][toe] = "X";
+			}
+			else {
+				System.out.print("Enter a Row (0, 1, or 2) for player O: ");
+				int tac = input.nextInt();
+				System.out.print("Enter a Column (0, 1, or 2) for player O: ");
+				int toe = input.nextInt();
+				tic[tac][toe] = "O";	
+			}	
+			for (int g = 0; g < tic.length; g++) {
+				System.out.print("\n-------------\n| ");
+				for (int j = 0; j < tic.length; j++){				
+					System.out.print(tic[g][j] + " | ");			
+				}				
+			}
+			System.out.println("\n-------------");
+			if (isWinner = true){
+				System.out.println("Congratulations! Player X is the winner!");
+			}
+			if else (isWinner = false){
+				System.out.println("Congratulations! Player O is the winner!");
+			}
+			else {
+				continue;
+			}
+		} 
+		
+		
+	
+	public static boolean isWinner(int tic[tac][toe]) {
+		Scanner input = new Scanner(System.in);
+		
+		for (int row = 0; row < tic.length; row++){
+			for (int col = 0; col < tic.length; col++){
+				if (tic[row][column] == {{"X", "X", "X"}, {" ", " ", " "}, {" ", " ", " "}} || {{" ", " ", " "}, {"X", "X", "X"}, 
+				{" ", " ", " "}} || {{" ", " ", " "}, {" ", " ", " "}, {"X", "X", "X"}} || {
+					{"X", " ", " "}, {" ", "X", " "},{" ", " ", "X"}} || {{" ", " ", "X"}, {" ", "X", " "}, {"X", " ", " "}}){
+					flag = true;
+				}
+			}
+				else if (tic[row][column] == {{"O", "O", "O"}, {" ", " ", " "}, {" ", " ", " "}} || {{" ", " ", " "}, {"O", "O", "O"}, 
+						{" ", " ", " "}} || {{" ", " ", " "}, {" ", " ", " "}, {"O", "O", "O"}} || {{"O", " ", " "}, {" ", "O", " "}, 
+						{" ", " ", "O"}} || {{" ", " ", "O"}, {" ", "O", " "}, {"O", " ", " "}}){
+							
+					flag = false;
+				}
+		}	
+			
+		return flag; 
+	}
+}
