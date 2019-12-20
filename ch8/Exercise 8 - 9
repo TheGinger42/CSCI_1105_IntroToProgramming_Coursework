@@ -1,3 +1,5 @@
+package ch8;
+
 /**
 Author: Troy Aiken
 Class: Intro to programming
@@ -58,20 +60,24 @@ class Exercise08_9 {
 		
 		
 	
-	public static boolean isWinner(int tic[tac][toe]) {
+	public static boolean isWinner(int tic a, b, ) {
 		Scanner input = new Scanner(System.in);
+		String[][] x1 = {{"X", "X", "X"}, {" ", " ", " "}, {" ", " ", " "}};
+		String[][] x2 = {{" ", " ", " "}, {"X", "X", "X"}, {" ", " ", " "}}; 
+		String[][] x3 = {{" ", " ", " "}, {" ", " ", " "}, {"X", "X", "X"}};
+		String[][] x4 = {{"X", " ", " "}, {" ", "X", " "}, {" ", " ", "X"}};
+		String[][] x5 = {{" ", " ", "X"}, {" ", "X", " "}, {"X", " ", " "}};
+		String[][] o1 = {{"O", "O", "O"}, {" ", " ", " "}, {" ", " ", " "}};
+		String[][] o2 = {{" ", " ", " "}, {"O", "O", "O"}, {" ", " ", " "}};
+		String[][] o3 = {{" ", " ", " "}, {" ", " ", " "}, {"O", "O", "O"}};
+		String[][] o4 = {{"O", " ", " "}, {" ", "O", " "}, {" ", " ", "O"}};
+		String[][] o5 = {{" ", " ", "O"}, {" ", "O", " "}, {"O", " ", " "}};
 		
-		for (int row = 0; row < tic.length; row++){
-			for (int col = 0; col < tic.length; col++){
-				if (tic[row][column] == {{"X", "X", "X"}, {" ", " ", " "}, {" ", " ", " "}} || {{" ", " ", " "}, {"X", "X", "X"}, 
-				{" ", " ", " "}} || {{" ", " ", " "}, {" ", " ", " "}, {"X", "X", "X"}} || {
-					{"X", " ", " "}, {" ", "X", " "},{" ", " ", "X"}} || {{" ", " ", "X"}, {" ", "X", " "}, {"X", " ", " "}}){
+				if (x1.isequal
 					flag = true;
 				}
 			}
-				else if (tic[row][column] == {{"O", "O", "O"}, {" ", " ", " "}, {" ", " ", " "}} || {{" ", " ", " "}, {"O", "O", "O"}, 
-						{" ", " ", " "}} || {{" ", " ", " "}, {" ", " ", " "}, {"O", "O", "O"}} || {{"O", " ", " "}, {" ", "O", " "}, 
-						{" ", " ", "O"}} || {{" ", " ", "O"}, {" ", "O", " "}, {"O", " ", " "}}){
+				else if (tic[3[3] =  ||  ||  ||  || ){
 							
 					flag = false;
 				}
