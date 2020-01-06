@@ -47,42 +47,6 @@ class Exercise08_9 {
 				}				
 			}
 			System.out.println("\n-------------");
-			if (isWinner = true){
-				System.out.println("Congratulations! Player X is the winner!");
-			}
-			if else (isWinner = false){
-				System.out.println("Congratulations! Player O is the winner!");
-			}
-			else {
-				continue;
-			}
 		} 
-		
-		
-	
-	public static boolean isWinner(int tic a, b, ) {
-		Scanner input = new Scanner(System.in);
-		String[][] x1 = {{"X", "X", "X"}, {" ", " ", " "}, {" ", " ", " "}};
-		String[][] x2 = {{" ", " ", " "}, {"X", "X", "X"}, {" ", " ", " "}}; 
-		String[][] x3 = {{" ", " ", " "}, {" ", " ", " "}, {"X", "X", "X"}};
-		String[][] x4 = {{"X", " ", " "}, {" ", "X", " "}, {" ", " ", "X"}};
-		String[][] x5 = {{" ", " ", "X"}, {" ", "X", " "}, {"X", " ", " "}};
-		String[][] o1 = {{"O", "O", "O"}, {" ", " ", " "}, {" ", " ", " "}};
-		String[][] o2 = {{" ", " ", " "}, {"O", "O", "O"}, {" ", " ", " "}};
-		String[][] o3 = {{" ", " ", " "}, {" ", " ", " "}, {"O", "O", "O"}};
-		String[][] o4 = {{"O", " ", " "}, {" ", "O", " "}, {" ", " ", "O"}};
-		String[][] o5 = {{" ", " ", "O"}, {" ", "O", " "}, {"O", " ", " "}};
-		
-				if (x1.isequal
-					flag = true;
-				}
-			}
-				else if (tic[3[3] =  ||  ||  ||  || ){
-							
-					flag = false;
-				}
-		}	
-			
-		return flag; 
 	}
 }
