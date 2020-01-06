@@ -1,6 +1,6 @@
 /*
-Author: 
-Date: 
+Author: Troy Aiken
+Date: 1/6/2020
 */
 
 import java.util.Scanner;
@@ -9,6 +9,8 @@ class  Mod5ExamPart1{
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int user = 0;
+		
+		
 		
 		
 		while (user != 1 && user != 2) {
@@ -44,8 +46,41 @@ class  Mod5ExamPart1{
 	 *         Number of F's: 8
 	 */
 	public static void printExam() {
+		Scanner input = new Scanner(System.in);
+		int a = 0;
+		int b = 0;
+		int c = 0;
+		int d = 0;
+		int f = 0;
+		double total = 0.0;
+		System.out.println("Input the 25 grades: ");
+		double[] grades = new double[25];
 		
-	}
+		for (int i = 0; i < grades.length; i++){
+			grades[i] = input.nextDouble();
+			total = grades[i] + total;
+			if (grades[i] >= 90.0){
+				a++;
+			}
+			else if (grades[i] >= 80.0){
+				b++;
+			}
+			else if (grades[i] >= 70.0){
+				c++;
+			}
+			else if (grades[i] >= 60.0){
+				d++;
+			}
+			else
+				f++;		
+				
+			}
+			double average = total / grades.length;
+			System.out.printf("Average score: $%.2f\n", average);
+			System.out.println("Number of A's: " + a + "\nNumber of B's: " + b + "\nNumber of C's: " + c + "\nNumber of D's: " + d + "\nNumber of F's: " + f);
+			
+		}				
+					
 	
 	/*
 	 * Display the number of days absent for the seating chart of a 5x5 classroom. 
@@ -77,6 +112,7 @@ class  Mod5ExamPart1{
 		int[][] att = new int[5][5];
 		int days = 0;
 		int count = 0;
+		int present = 0;
 		// Ask how many days they would like to take attendance for
 		System.out.print("\nHow many days would you like to enter? ");
 		days = input.nextInt();
@@ -92,7 +128,7 @@ class  Mod5ExamPart1{
 		System.out.println("|________________________________|");
 		
 		//Enter in attendance for d days making sure the students' attendance is added into their location in the seating chart
-			for (int d = 0; d < days; d++) {
+		for (int d = 0; d < days; d++) {
 			for (int r = 0; r < att.length; r++) {
 				System.out.println("\nDay " + (d+1));
 				System.out.print("Enter 5 numbers for row " + r + " (1 = absent, 0 = present): ");
@@ -111,13 +147,9 @@ class  Mod5ExamPart1{
 				count++;
 				if (count == 5){
 					System.out.println();
-				}	
-				
-						
+				}				
 			}
 			count = 0;
-		}	
-		
-		
+		}			
 	}
 }
