@@ -1,0 +1,32 @@
+Final Project Proposal
+
+I would like make a program for playing game of Sabacc, a gambling card game from the Star Wars Franchise. However, I don’t have enough knowledge in programming to create the game. So, I would like to make a program for Blackjack as I will be able to expand on the card game later to create Sabacc in a later course. 
+Blackjack will be dealer vs. user. Dealer will have to draw a card while its hand is less than or equal to 17. The player may choose to hit, stand, fold, bet, double, and call. When dealt two cards of the same value at beginning of the game, player may choose to split the hand. Splitting doubles the bet, player may double the bet again, for quadruple.  Face cards are worth 10, aces are worth 1 or 11, if player is dealt 21 it is a blackjack. If player goes over 21 it is a bust and dealer wins. Winning gains is 1.5 times the bet.
+I don’t intend this program to target anyone except maybe those that want to casually play Blackjack. I intend to use casino rules, so anyone who wants to practice strategy may find it useful.
+There are already many applications for playing blackjack, so mine will certainly be nothing new. I’ll use copper, silver, and gold pieces in place of chips, just because I like that better.  10 copper = 1 silver, 10 silver = 1 gold. This program will really only be helpful to me.
+
+Possible bugs:
+1.	methods.
+2.	While loops
+3.	
+
+This program should incorporate everything I have learned in this class and then some. It will certainly be a challenge for me. 
+There will be an array of 52 cards, and array of 4 suits, and an array of 13 ranks, use a randomizer to shuffle the array. The number is divided by 13 to give the suit, and mod 13 to give the rank. Example the deck[48] is the 10 (48 %13 = 9) of clubs (48 / 13 = 3(.69)). Deal 4 cards. One of the dealers cards will not be shown. I want to display it like this:
+							Pool: 5 copper, 6 silver, 0 gold
+Dealer’s hand: unknown, 5 of clubs
+Player’s hand: 10 of Hearts, 8 of Diamonds		Player Funds:
+
+Place a bet? (Y/N/Fold): Y
+How much? 1 gold
+Hit? (Y/N):N
+No will mean player stands, with a total of 18 for the player and a max total of 16 for the dealer the dealer will have to draw a new card.
+								Pool: 5 copper, 6 silver, 1 gold
+Dealer’s hand: Unknown, 5 of clubs, 8 of Spades.
+Player’s hand: 10 of Hearts, 8 of Diamonds		Player Funds:
+
+Place a bet? (y/n fold): Y
+How much? 2 Gold
+Hit? (Y/N): N
+
+Dealer’s unknown card is an 8 of hearts. Cards are shown. Dealer wins.
+
