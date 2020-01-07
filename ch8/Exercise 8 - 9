@@ -41,6 +41,9 @@ class Exercise08_9 {
 						toe = input.nextInt();
 					}
 				}
+				if (tic[tac][toe] == " "){
+					tic[tac][toe] = "X";
+				}
 			}
 			else {
 				System.out.print("Enter a Row (0, 1, or 2) for player O: ");
@@ -52,18 +55,22 @@ class Exercise08_9 {
 				}
 				else {
 					while (tic[tac][toe] == "X" || tic[tac][toe] == "O"){
-					System.out.println("Space already taken.");
-					System.out.print("Enter a Row (0, 1, or 2) for player O: ");
-					tac = input.nextInt();
-					System.out.print("Enter a Column (0, 1, or 2) for player O: ");
-					toe = input.nextInt();
+						System.out.println("Space already taken.");
+						System.out.print("Enter a Row (0, 1, or 2) for player O: ");
+						tac = input.nextInt();
+						System.out.print("Enter a Column (0, 1, or 2) for player O: ");
+						toe = input.nextInt();
+						}
 					}
-				}
+					if (tic[tac][toe] == " "){
+						tic[tac][toe] = "O";
+					}				
 			}	
+		
 			for (int g = 0; g < tic.length; g++) {
 				System.out.print("\n-------------\n| ");
 				for (int j = 0; j < tic.length; j++){				
-				System.out.print(tic[g][j] + " | ");			
+					System.out.print(tic[g][j] + " | ");			
 				}				
 			}
 			System.out.println("\n-------------");
