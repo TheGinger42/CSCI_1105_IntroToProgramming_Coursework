@@ -1,82 +1,186 @@
+package blackjack21;
+
 /*
  * Author: Troy Aiken
  * Class: Introduction to Programming
  * Date: 01/08/2020
  */
-package blackjack01;
+
 import java.util.Scanner;
 public class blackjack21 {
-public static void main(String[] args) {
-	Scanner input = new Scanner(System.in);
-	String[] deck = {"Ace of Spades", "2 of Spades", "3 of Spades", "4 of Spades", "5 of Spades", "6 of Spades", "7 of Spades", "8 of Spades", "9 of Spades", "10 of Spades", "Jack of Spades", "Queen of Spades", "King of Spades", 
-			"Ace of Hearts", "2 of Hearts", "3 of Hearts", "4 of Hearts", "5 of Hearts", "6 of Hearts", "7 of Hearts", "8 of Hearts", "9 of Hearts", "10 of Hearts", "Jack of Hearts", "Queen of Hearts", "King of Hearts", 
-			"Ace of Diamonds", "2 of Diamonds", "3 of Diamonds", "4 of Diamonds", "5 of Diamonds", "6 of Diamonds", "7 of Diamonds", "8 of Diamonds", "9 of Diamonds", "10 of Diamonds", "Jack of Diamonds", "Queen of Diamonds", "King of Diamonds", 
-			"Ace of Clubs", "2 of Clubs", "3 of Clubs", "4 of Clubs", "5 of Clubs", "6 of Clubs", "7 of Clubs", "8 of Clubs", "9 of Clubs", "10 of Clubs", "Jack of Clubs", "Queen of Clubs", "King of Clubs"};
-	int pool = 0;
-	int funds = 100;
-	
-	
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		String[] deck = {"Ace of Spades", "2 of Spades", "3 of Spades", "4 of Spades", "5 of Spades", "6 of Spades", "7 of Spades", "8 of Spades", "9 of Spades", "10 of Spades", "Jack of Spades", "Queen of Spades", "King of Spades", 
+				"Ace of Hearts", "2 of Hearts", "3 of Hearts", "4 of Hearts", "5 of Hearts", "6 of Hearts", "7 of Hearts", "8 of Hearts", "9 of Hearts", "10 of Hearts", "Jack of Hearts", "Queen of Hearts", "King of Hearts", 
+				"Ace of Diamonds", "2 of Diamonds", "3 of Diamonds", "4 of Diamonds", "5 of Diamonds", "6 of Diamonds", "7 of Diamonds", "8 of Diamonds", "9 of Diamonds", "10 of Diamonds", "Jack of Diamonds", "Queen of Diamonds", "King of Diamonds", 
+				"Ace of Clubs", "2 of Clubs", "3 of Clubs", "4 of Clubs", "5 of Clubs", "6 of Clubs", "7 of Clubs", "8 of Clubs", "9 of Clubs", "10 of Clubs", "Jack of Clubs", "Queen of Clubs", "King of Clubs"};
+		int pool = 0;
+		int funds = 100;
+		String[] shuffledDeck = shuffleDeck(deck);
+		int[] card = checkCardValue(shuffledDeck);
+		System.out.println("							Pool: $" + pool);
+		System.out.println("							Player Funds: $" + funds);		
+
+		System.out.println("Place a bet.");
+		int bet = input.nextInt();
+		pool = pool + bet;
+		funds = funds - bet;
+		int cardCount = 4;
+		
+		System.out.println("Dealer's hand: unknown, " + shuffledDeck[3]);
+		System.out.println("Player's hand: " + shuffledDeck[0] + ", " + shuffledDeck[2]);
+		
+		System.out.println("Hit or Stand?");
+		String hitStand = input.nextString();
+		if (hitStand.equalsIgnoreCase("hit")){
+			System.out.println("Will you double your bet? (Y/N");
+			String doubleBet = input.next();
+			if (doubleBet.equalsIgnoreCase(y)) {
+				bet = bet * 2;
+				pool = bet;
+				funds = funds - bet;
+			}
+			else {
+				continue;
+				drawCard(cardCount);
+				cardCount++;
+				dealerRules();
+			}
+			else{
+				isWinner;
+
+				pool = 0;
+
+			}
+
+		}
+
 	}
+
 	public static String[] shuffleDeck(String[] deck) {
 		boolean flag = false;
 		String[] shuffledDeck = new String[52];	
-			for (int i = 0; i < deck.length; i++){
-				int index = (int)(Math.random() * deck.length);
-				
-				for (int a = 0; a < deck.length; a++){
-					for (int b = 0; b < deck.length; b++){
-						if (deck[a] == shuffledDeck[b]){
-							flag = true;
-						}
-						if (!flag){
-							shuffledDeck[i] = deck[index];
-						}
-						else{
-							flag = false;
-						}
+		for (int i = 0; i < deck.length; i++){
+			int index = (int)(Math.random() * deck.length);
+
+			for (int a = 0; a < deck.length; a++){
+				for (int b = 0; b < deck.length; b++){
+					if (deck[a] == shuffledDeck[b]){
+						flag = true;
+					}
+					if (!flag){
+						shuffledDeck[i] = deck[index];
+					}
+					else{
+						flag = false;
 					}
 				}
-			}			
-			
+			}
+		}			
+		return shuffledDeck;
 	}
-	public static String[] dealCards(String[] shuffledDeck) {
-		System.out.println("Dealer's hand: unknown, " + shuffledDeck[2]);
-		System.out.println("player's hand: " + shuffledDeck[1] + ", " + shuffledDeck[3]);
-	}
-	public static String[] drawCard(String[] shuffledDeck[]) {
+
+
+	public static String[] drawCard(String[] shuffledDeck) {
+		int count = 4;
 		
-	}
-	public void dealerRules(String[] shuffledDeck){
-		checkCardValue
-		if (ShuffledDeck[2] + ShuffledDeck[4] <= 17) {
+		return shuffledDeck[count];
+		count++;
+
+		}
+
+	public void int dealerRules(String[] shuffleDeck){
+	for(int i = 0; i < 52; i++) {
+		String[] card = shuffleDeck[];
+		if (checkCardvalue(card[1]) + checkCardValue(card[3]) <= 17) {
 			drawCard;
 		}
-		else if (ShuffledDeck[2] + ShuffledDeck[4] >=18 && <= 21) {
-			continue;
+		else if (checkCardValue(card[1]) + checkcardvalue(ShuffleDeck(card[3]) >=18 && <= 21) {
+			return checkCardValue(ShuffleDeck[1]) + checkcardvalue(ShuffleDeck[3]);
 		}
 		else {
-			bust
+
+		}	
+		else{
+			break;
 		}
 	}
+}
+
 	public static String[] split(String[] shuffledDeck) {
-		Scanner input = new Scanner(System.in);
-		System.out.println("Player's hand 1: " + shuffledDeck[1] + shuffledDeck[5]);
-		System.out.println("Player's hand 2: "+ shuffledDeck[3] + shuffledDeck[6]);
+	Scanner input = new Scanner(System.in);
+
+	System.out.println("Player's hand 1: " + shuffledDeck[0] + drawCard(4));
+	System.out.println("Player's hand 2: "+ shuffledDeck[2] + drawCard(5));
 	}
-	public void Boolean isWinner() {
-		
-		
+public void Boolean isWinner() {
+	int dealer = checkCardValue(dealerRules);
+
+	funds = funds + (pool * 2);
+	System.out.println("Player Wins");
+	System.out.println("Play again?" (Y/N);
+	String play = input.next();
+	if (play.equalsIgnoreCase("y")){
+		shuffleDeck;
 	}
-	public static int checkCardValue(String[] shuffledDeck) {
+}
+	public static int[] checkCardValue(String[] deck) {
+		int value = 0;
 		for (int i = 0; i < 52; i++) {
-			if (shuffledDeck[i].contains(King) {
-				return 10;
+			if (shuffledDeck[i].contains("King") {
+				value = 10;
+				return value;
 			}
-			else if (shuffledDeck[i].contains(Queen) {
-				return 10;
+			else if (shuffledDeck[i].contains("Queen") {
+				value = 10;
+				return value;
 			}
-				
+			else if (shuffledDeck[i].contains("Jack") {
+				value = 10;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("10") {
+				value = 10;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("9"){
+				value = 9;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("8") {
+				value = 8;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("7") {
+				value = 7;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("6") {
+				value = 6;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("5") {
+				value = 5;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("4") {
+				value = 4;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("3") {
+				value = 3;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("2") {
+				value = 2;
+				return value;
+			}
+			else if (shuffledDeck[i].contains("Ace") {
+
+				value = 1;
+				return value;
+			}	
 		}
 	}
-	
 }
