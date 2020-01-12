@@ -26,13 +26,13 @@ public class Blackjack21 {
 			//shuffle deck, card values for shuffled deck, player and dealer hands.
 			String[] shuffledDeck = shuffleDeck(deck);
 			int[] cardValue = getCardValue(shuffledDeck);
-			String[] playersHand = new String[5];
-			String[] dealersHand = new String[5];
-			int[] playerHandTotal = new int[5];
-			int[]dealerHandTotal = new int[5];
+			String[] playersHand = new String[pcount + 1];
+			String[] dealersHand = new String[dcount + 1];
+			int[] playerHandTotal = new int[pcount + 1];
+			int[]dealerHandTotal = new int[dcount + 1];
 			String[] tempcard = new String[1];
 			int[] tempvar = new int[1];
-			
+
 			for (int f = 0; f < shuffledDeck.length; f++) {
 				System.out.print("deck: " + shuffledDeck[f] + ", ");
 			}
@@ -77,9 +77,7 @@ public class Blackjack21 {
 				System.out.print(playersHand[j] + ", ");
 			}
 			System.out.println();
-			System.out.println("card number: "+ card);
-
-			System.out.println("Total: " + playertotal);
+			System.out.println("Player Total: " + playertotal);
 			if (playertotal < 21) {
 				System.out.println("Double your bet and draw a card? (Y/N)");
 				String doubleBet = input.next();
@@ -89,20 +87,28 @@ public class Blackjack21 {
 					bet = bet * 2;
 					pool = bet;
 					funds = funds - bet;
-				//double bet and draw a card
+					//double bet and draw a card
 					playersHand[pcount] = shuffledDeck[card];
 					playerHandTotal[pcount] = cardValue[card];
 					card++;
 					pcount++;		
 				}
 				else {
-					System.out.println("Draw a card? (Y/N)");
-					String drawcard = input.next();
-					if (drawcard.equalsIgnoreCase("y")) {
-						playersHand[pcount] = shuffledDeck[card];
-						playerHandTotal[pcount] = cardValue[card];
-						card++;
-						pcount++;
+					playertotal =  playerTotal(playerHandTotal);
+					while (playertotal < 21) {
+						System.out.println("Draw a card? (Y/N)");
+						String drawcard = input.next();
+						if (drawcard.equalsIgnoreCase("y")) {
+							playersHand[pcount] = shuffledDeck[card];
+							playerHandTotal[pcount] = cardValue[card];
+							card++;
+							pcount++;
+							playertotal =  playerTotal(playerHandTotal);
+						}
+						else {
+							playertotal =  playerTotal(playerHandTotal);
+							break;
+						}
 					}
 				}
 			}
@@ -116,7 +122,7 @@ public class Blackjack21 {
 			}
 			System.out.println();
 			System.out.println("Player's total: " + playertotal);
-			System.out.println("card number: "+ card);
+
 			if (playertotal < 21) {
 				playersHand[pcount - 1] = shuffledDeck[card];
 				playerHandTotal[pcount - 1] = cardValue[card];
@@ -132,7 +138,7 @@ public class Blackjack21 {
 				if (dealersHand[0].contains("Ace")) {
 					dealertotal = dealerTotal(dealerHandTotal);
 					if(dealertotal > 21) {
-					dealerHandTotal[0] = 1;
+						dealerHandTotal[0] = 1;
 					}
 				}
 			}
@@ -157,7 +163,7 @@ public class Blackjack21 {
 					else {
 						flag = false;
 					}				
-					
+
 				}
 				else {
 					pool = 0;
@@ -174,7 +180,11 @@ public class Blackjack21 {
 		}
 	}
 
-
+	/**
+	 * This method checks the total card value of the player's hand.
+	 * @param playerHandTotal is the Array of the value of the player's hand.
+	 * @return total value of the player's hand
+	 */
 	public static int playerTotal(int[] playerHandTotal) {
 		int temp = 0;
 		int var = 0;
@@ -185,7 +195,11 @@ public class Blackjack21 {
 		}
 		return var;
 	}
-
+	/**
+	 * This Method gets the total card value of the dealer's hand.
+	 * @param dealerHandTotal is the Array of the value of the dealer's hand
+	 * @return total value of the dealer's hand
+	 */
 	public static int dealerTotal(int[] dealerHandTotal) {
 		int temp = 0;
 		int var = 0;
@@ -197,7 +211,11 @@ public class Blackjack21 {
 		}
 		return var;
 	}
-
+	/**
+	 * This method checks the total of the dealer's hand
+	 * @param dealertotal is the total card value of the dealer's hand.
+	 * @return when true the dealer draws a card.
+	 */
 	public static Boolean checkDealerTotal(int dealertotal) {
 		boolean flag = false;
 		if (dealertotal <= 17) {
@@ -208,7 +226,12 @@ public class Blackjack21 {
 		}
 		return flag;
 	}
-
+	/**
+	 * This Method compares the totals of the player's hand and the dealer's hand.
+	 * @param x uses the playertotal to compare with dealertotal
+	 * @param y dealer total
+	 * @return if it returns true player wins, if false player looses.
+	 */
 	public static Boolean isWinner(int x, int y) {
 		boolean flag = false;
 		if (x == 21 && y != 21) {
@@ -225,7 +248,11 @@ public class Blackjack21 {
 		}
 		return flag;
 	}
-
+	/**
+	 * This Method fills the Array shuffledDeck with a random card from the array Deck.
+	 * @param deck a deck of 52 cards in order from Ace to King.
+	 * @return fills the Array shuffledDeck without copies
+	 */
 	public static String[] shuffleDeck(String[] deck) {
 		boolean flag = false;
 		String[] shuffledDeck = new String[52];	
@@ -257,6 +284,11 @@ public class Blackjack21 {
 		System.out.println("Player's hand 2: "+ playerhand2);
 	}**/
 
+	/**
+	 * This Method fills an array at cardValue with the values presented with the shuffledDeck array.
+	 * @param shuffledDeck Uses the Array shuffledDeck
+	 * @return returns the value of each card from shuffledDeck to the Array cardValue. 
+	 */
 	public static int[] getCardValue(String[] shuffledDeck) {
 
 		int[] cardValue = new int[52];
