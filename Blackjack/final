@@ -215,7 +215,7 @@ public class Blackjack21 {
 			playertotal = playerTotal(playerHandValue);
 			dealertotal = dealerTotal(dealerHandValue);
 			if (isWinner(playertotal, dealertotal) == true) {
-				funds = funds + (pool * 1.5);
+				funds = funds + bet + (pool * 1.5);
 				pool = 0;
 				System.out.println("Player funds: $" + funds);
 				System.out.println("Congratulations! You win! \nPlay Again? (Y/N)");
