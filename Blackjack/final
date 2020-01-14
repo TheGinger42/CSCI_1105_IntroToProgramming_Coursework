@@ -295,6 +295,11 @@ public class Blackjack21 {
 		}
 		return flag;
 	}
+	/**
+	 * This method checks the player's hand.
+	 * @param playertotal playerTotal is the total value of the player's hand.
+	 * @return returns true as long as playertotal is less than 21.
+	 */
 	public static Boolean checkPlayerTotal( int playertotal){
 		boolean flag = false;
 		if (playertotal > 21){
