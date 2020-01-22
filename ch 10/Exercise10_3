@@ -1,0 +1,132 @@
+class MyIntegerTest {
+	public static void main(String[] args) {
+		MyInteger test = new MyInteger(10);
+		MyInteger jet = new MyInteger(13);
+		String stest = "1234578";
+		char[] chars = {'1', '2', '3', '4', '5'};
+		int myint = 9;
+		
+		// non-static
+		System.out.println("Is the test value Even? " + test.isEven());
+		System.out.println("Is the test value Odd? " + test.isOdd());
+		System.out.println("Is the test value Prime? " + test.isPrime());
+		
+		// static int
+		System.out.println("Is the static number Even? " + MyInteger.isEven(myint));
+		System.out.println("Is the static number Odd? " + MyInteger.isOdd(myint));
+		System.out.println("Is the static number Prime? " + MyInteger.isPrime(myint));
+		System.out.println("Are the static and non-static numbers equal? " + test.equals(myint));
+		
+		// static MyInteger
+		System.out.println("Is the Static object Even? " + MyInteger.isEven(jet));
+		System.out.println("Is the Static object Odd? " + MyInteger.isOdd(jet));
+		System.out.println("Is the Static object Prime? " + MyInteger.isPrime(jet));
+		System.out.println("Are the 2 non-static numbers equal? " + test.isEqual(jet));
+
+
+		// parse int
+		System.out.println("Parse chars " + test.parseInt(chars));
+		System.out.println("Parse string " + test.parseInt(stest));
+	}
+}
+
+public class MyInteger {
+	int value;
+
+	public MyInteger(int value) {
+		this.value = value;
+	}
+	public int getValue(){
+		return this.value;
+	}
+	public Boolean isEven(){
+		if(this.value % 2 == 0){
+		return true;
+		}
+		return false;
+	}
+	public Boolean isOdd(){
+		if(this.value % 2 == 1){
+			return true;
+		}
+	return false;
+	}
+	public Boolean isPrime(){
+		for (int divisor = 2; divisor <= this.value / 2; divisor++){
+			if (this.value % divisor == 0){
+				return false;
+				
+			}
+		}
+		return true;
+	}
+	public static Boolean isEven(int myint){
+		if(myint % 2 == 0){
+			return true;
+		}
+		return false;
+	}
+	public static Boolean isOdd(int myint){
+		if (myint % 2 == 1){
+			return true;
+		}
+		return false;
+	}
+	public static Boolean isPrime(int myint){
+		for (int divisor = 2; divisor <= myint / 2; divisor++){
+			if (myint % divisor == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static Boolean isEven(MyInteger myint){
+		if(myint.getValue() % 2 == 0){
+			return true;
+		}
+			return false; 
+	}
+	public static Boolean isOdd(MyInteger myint){
+		if(myint.getValue() % 2 == 1){
+			return true;
+		}
+		return false;
+	}
+
+	public static Boolean isPrime(MyInteger myint){
+		for (int divisor = 2; divisor <= myint.getValue() / 2; divisor++){
+			if(myint.getValue() % divisor == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+	public  Boolean equals(int i){
+		if(this.value == i){
+			return true;
+		}
+		return false;
+	}
+	public Boolean isEqual(MyInteger myint){
+		if (myint.getValue() == this.value){
+			return true;
+		}
+		return false;
+	}
+	public static int parseInt(char[] chars){
+		int x = 0;
+		for(int i = 0; i <chars.length; i++){
+			int temp = (int)chars[i] - 48;
+			x = (x * 10) + temp;
+		
+		}
+		return x;
+	}
+	public static int parseInt(String stest){
+		char[] ch = stest.toCharArray();
+		int i = parseInt(ch);
+		
+		return i;
+	}
+}
