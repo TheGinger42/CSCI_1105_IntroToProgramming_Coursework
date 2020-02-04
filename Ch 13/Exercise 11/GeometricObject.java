@@ -40,4 +40,9 @@ public abstract class GeometricObject {
 	
 	public abstract double getPerimeter();
 	
+	public Octagon clone(Octagon o) {
+		
+		return null;
+	}
+	
 }
