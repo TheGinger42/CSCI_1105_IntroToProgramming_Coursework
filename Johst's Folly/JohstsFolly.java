@@ -4,22 +4,14 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Rectangle;
 
@@ -236,9 +228,7 @@ public class JohstsFolly extends Application{
 		center.getChildren().add(text1);
 		text1.setWrapText(true);
 		text1.setPadding(new Insets(5, 5, 5, 5));
-
 		borderPane.setPadding(new Insets(10, 10, 10, 10));
-
 		borderPane.setLeft(left);
 		borderPane.setCenter(center);
 		borderPane.setRight(right);
@@ -282,11 +272,14 @@ public class JohstsFolly extends Application{
 
 	}
 	public static VBox rightPane(Character a, Character b) {
+	
+		
 		VBox right = new VBox();
 		ImageView image = new ImageView("dude.png");
 		image.setVisible(true);
 		image.setFitHeight(90);
 		image.setFitWidth(90);
+		right.setPadding(new Insets(30,30,30,30));
 		right.setStyle("-fx-background-color: sandybrown");
 		right.getChildren().addAll(image);
 		return right;
@@ -418,11 +411,11 @@ public class JohstsFolly extends Application{
 				
 			}
 			else {
-				center.getChildren().add(failtame);
+				
 				if (hit(b, a) == true) {
 					double damage = attack(b);
 					a.setHP(a.getHP() - damage);
-					mon.setText("You have been bitten by the wolf. It did " + damage + " damage");
+					mon.setText("you failed to tame the wolf. \nYou have been bitten by the wolf. It did " + damage + " damage");
 				}
 			}
 		});
@@ -493,7 +486,7 @@ public class JohstsFolly extends Application{
 			else if (hit(b, a) == true) {
 				double damage = attack(b);
 				a.setHP(a.getHP() - damage);
-				mon.setText("You have been bitten by the wolf. It did " + damage + " damage");
+				mon.setText("You failed to intimidate to wolf. \nYou have been bitten by the wolf. It did " + damage + " damage");
 				leftPane(a);
 				if (a.getHP() <= 0) {
 					mon.setText("You have died.");
@@ -511,8 +504,9 @@ public class JohstsFolly extends Application{
 			}
 		});
 		run.setOnAction(e -> {
-			center.getChildren().addAll(runScene, next);
-		
+			mon.setText("You ran away.");
+			bottom.getChildren().add(next);
+			bottom.getChildren().removeAll(tame, attack, intimidate, run);
 		});
 		
 		bottom.setStyle("-fx-background-color: sandybrown");
